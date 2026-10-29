@@ -1,0 +1,15 @@
+
+services:
+  hive:
+    image: apache/hive:4.1.0
+    container_name: hive
+    ports:
+      - "10000:10000"
+      - "10002:10002"
+    environment:
+      SERVICE_NAME: hiveserver2
+    volumes:
+      - hive_data:/opt/hive/data
+
+volumes:
+  hive_data:
